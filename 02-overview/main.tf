@@ -8,10 +8,13 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "eu-west-1"
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-011899242bb902164" # Ubuntu 20.04 LTS // us-east-1
-  instance_type = "t2.micro"
+  ami           = "ami-09b024e886d7bbe74"
+  instance_type = "t3.micro"
+  tags = {
+    Name = "example-instance"
+  }
 }
